@@ -2,21 +2,17 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;   
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .header__menu {
-    display: none;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    gap: 2em;
 }
-
-.header__bars {
-    color: var(--clr-light);
-    width: var(--size-2xl);
-    height: var(--size-2xl);
-    display: block;
-}
-
 
 
 /* xs */
@@ -31,36 +27,12 @@
 
 /* md */
 @media (min-width: 768px) {
-    .header__menu {
-        display: flex;
-        align-items: center;
-        list-style: none;
-        padding: 0;
-        gap: 2em;
-    }
-
-    .header__link {
-        font-size: var(--size-xs);
-        text-decoration: none;
-        font-weight: 600;
-        color: var(--clr-slate600);
-        transition: color 0.3s;
-    }
     
-    .header__link:hover {
-        color: var(--clr-rose);
-    }
-
-    .header__bars {
-        display: none;
-    }
 }
 
 /* lg */
 @media (min-width: 1024px) {
-    .header__link {
-        font-size: var(--size-xl);
-    }
+
 }
 
 /* xl */
