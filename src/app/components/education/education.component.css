@@ -1,0 +1,147 @@
+.title {
+    font-size: var(--size-2xl);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.title-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.text-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.education__type {
+    margin-top: 1rem;
+}
+
+.type {
+    font-size: var(--size-lg);
+    color: var(--clr-rose);
+    align-self: left;
+}
+
+.type-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button-cont {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button {
+    padding: 0;
+    width: 5rem;
+    height: 1rem;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    font-size: var(--size-base);
+    color: var(--clr-slate600);
+}
+
+/* xs */
+@media (min-width: 475px) {
+    
+} 
+
+/* sm */
+@media (min-width: 640px) {
+    
+}
+
+/* md */
+@media (min-width: 768px) {
+    .title {
+        font-size: var(--size-3xl);
+    }
+
+    .title-cont {
+        margin-top: 2rem;
+    }
+
+    .type {
+        font-size: var(--size-2xl);
+    }
+
+    .button {
+        width: 7rem;
+        height: 1.5rem;
+        box-shadow: 0 10px 20px rgba(225, 29, 72, 0.5), 0 6px 6px rgba(225, 29, 72, 0.5), 0 0 100px -10px var(--clr-rose);
+    }
+
+    .description {
+        font-size: var(--size-lg);
+        margin-top: 1rem;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    .title {
+        font-size: var(--size-4xl);
+    }
+
+    .title-cont {
+        margin-top: 3rem;
+    }
+
+    .type {
+        font-size: var(--size-3xl);
+    }
+
+    .button {
+        width: 7rem;
+        height: 1.5rem;
+    }
+
+    .description {
+        font-size: var(--size-lg);
+        margin-top: 1rem;
+    }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+    .title {
+        font-size: var(--size-6xl);
+    }
+
+    .title-cont {
+        margin-top: 4rem;
+    }
+
+    .type {
+        font-size: var(--size-4xl);
+    }
+
+    .button {
+        width: 7.5rem;
+        height: 1.8rem;
+    }
+
+    .description {
+        font-size: var(--size-xl);
+        margin-top: 1rem;
+    }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    
+}
