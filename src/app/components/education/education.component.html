@@ -1,4 +1,4 @@
-<div class="education container">
+<div class="container">
     <div class="title-cont">
         <div class="text-cont">
             <h2 class="title">Education</h2>
@@ -7,16 +7,39 @@
             <button class="button btn">Add</button>
         </div>
     </div>
-    <div class="education__type">
+    <div class="field__type"  *ngFor="let item of education">
         <div class="type-cont">
             <h2 class="type">
-                Education Type
+                {{item.type}}
             </h2>
             <div class="button-cont">
                 <button class="button btn">Edit</button>
-                <button class="button btn">Delete</button>
+                <button class="button btn" (click)="deleteEducation(item.id)">Delete</button>
             </div>
         </div>
-        <h3 class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, dolorum.</h3>
+        <h3 class="description">{{item.description}}</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="title-cont">
+        <div class="text-cont">
+            <h2 class="title">Experience</h2>
+        </div>
+        <div class="button-cont">
+            <button class="button btn">Add</button>
+        </div>
+    </div>
+    <div class="field__type" *ngFor="let item of experience">
+        <div class="type-cont">
+            <h2 class="type">
+                {{item.place}}
+            </h2>
+            <div class="button-cont">
+                <button class="button btn">Edit</button>
+                <button class="button btn" (click)="deleteExperience(item.id)">Delete</button>
+            </div>
+        </div>
+        <h3 class="description">{{item.description}}</h3>
+        <h3 class="description">Tiempo: {{item.timePeriod}}</h3>
     </div>
 </div>
