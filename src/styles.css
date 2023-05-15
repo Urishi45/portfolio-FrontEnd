@@ -70,6 +70,12 @@ strong {
     color: var(--clr-indigo);
 }
 
+input {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    border: solid 1px var(--clr-slate600);
+}
+
 .btn {
     display: inline-block;
     font-weight: 600;

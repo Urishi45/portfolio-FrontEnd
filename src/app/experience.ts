@@ -1,5 +1,5 @@
 export interface Experience {
-    id: number,
+    id?: number,
     place: string,
     description: string,
     timePeriod: string

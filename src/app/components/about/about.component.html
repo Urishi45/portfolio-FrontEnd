@@ -1,6 +1,6 @@
 <main>
     <section *ngIf="data" class="about container">
-        <img class="about__img" src={{imgUrl2}}>
+        <img class="about__img" src={{data.imageUrl}}>
         <h2 class="about__subtitle">{{data.fullName}}</h2>
         <h1 class="about__title">Full-Stack Developer Jr</h1>
         <p class="about__description">
@@ -9,7 +9,7 @@
     </section>
     <section class="info container section">
         <h2 class="info__title">
-            Technologies
+            Conocimientos
         </h2>
         <ul class="info__skills">
             <li>HTML</li>

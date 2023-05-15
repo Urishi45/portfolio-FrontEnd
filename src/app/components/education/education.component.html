@@ -1,10 +1,27 @@
 <div class="container">
     <div class="title-cont">
         <div class="text-cont">
-            <h2 class="title">Education</h2>
+            <h2 class="title">Educacion</h2>
         </div>
         <div class="button-cont">
-            <button class="button btn">Add</button>
+            <button class="button btn" (click)="toggleEducationForm()">Add</button>
+        </div>
+        <div class="overlay" *ngIf="AddEducationFormState">
+            <div class="modal education-form">
+                <form (ngSubmit)="onAddEducation()">
+                    <div class="form-field">
+                        <label for="type"><h2>Tipo de Educacion</h2></label>
+                        <input type="text" id="type" name="type" [(ngModel)]="type">
+                    </div>
+                    <div class="form-field">
+                        <label for="description"><h2>Descripcion</h2></label>
+                        <input type="text" id="description" name="description" [(ngModel)]="description">
+                    </div>
+                    <div class="form-field">
+                        <input type="submit" value="Submit" class="btn btn-submit">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <div class="field__type"  *ngFor="let item of education">
@@ -13,8 +30,25 @@
                 {{item.type}}
             </h2>
             <div class="button-cont">
-                <button class="button btn">Edit</button>
-                <button class="button btn" (click)="deleteEducation(item.id)">Delete</button>
+                <button class="button btn" (click)="toggleEditEducationForm(item)">Editar</button>
+                <div class="overlay" *ngIf="EditEducationFormState">
+                    <div class="modal education-form">
+                        <form (ngSubmit)="onEditEducation()">
+                            <div class="form-field">
+                                <label for="editType"><h2>Tipo de Educacion</h2></label>
+                                <input type="text" id="editType" name="editType" [(ngModel)]="editType">
+                            </div>
+                            <div class="form-field">
+                                <label for="editDescription"><h2>Descripcion</h2></label>
+                                <input type="text" id="editDescription" name="editDescription" [(ngModel)]="editDescription">
+                            </div>
+                            <div class="form-field">
+                                <input type="submit" class="btn btn-submit" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <button class="button btn" (click)="deleteEducation(item)">Delete</button>
             </div>
         </div>
         <h3 class="description">{{item.description}}</h3>
@@ -23,10 +57,31 @@
 <div class="container">
     <div class="title-cont">
         <div class="text-cont">
-            <h2 class="title">Experience</h2>
+            <h2 class="title">Experiencia</h2>
         </div>
         <div class="button-cont">
-            <button class="button btn">Add</button>
+            <button class="button btn" (click)="toggleAddExperience()">Add</button>
+        </div>
+        <div class="overlay" *ngIf="addExperienceFormState">
+            <div class="modal experience-form">
+                <form (ngSubmit)="onAddExperience()">
+                    <div class="form-field">
+                        <label for="experiencePlace"><h2>Lugar</h2></label>
+                        <input type="text" id="experiencePlace" name="experiencePlace" [(ngModel)]="experiencePlace">
+                    </div>
+                    <div class="form-field">
+                        <label for="experienceDescription"><h2>Descripcion</h2></label>
+                        <input type="text" id="experienceDescription" name="experienceDescription" [(ngModel)]="experienceDescription">
+                    </div>
+                    <div class="form-field">
+                        <label for="experienceTimePeriod"><h2>Tiempo</h2></label>
+                        <input type="text" id="experienceTimePeriod" name="experienceTimePeriod" [(ngModel)]="experienceTimePeriod">
+                    </div>
+                    <div class="form-field">
+                        <input type="submit" class="btn btn-submit" value="submit">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <div class="field__type" *ngFor="let item of experience">
@@ -35,11 +90,36 @@
                 {{item.place}}
             </h2>
             <div class="button-cont">
-                <button class="button btn">Edit</button>
-                <button class="button btn" (click)="deleteExperience(item.id)">Delete</button>
+                <button class="button btn" (click)="toggleEditExperienceForm(item)">Edit</button>
+                <div class="overlay" *ngIf="editExperienceFormState">
+                    <div class="modal experience-form">
+                        <form (ngSubmit)="onEditExperience()">
+                            <div class="form-field">
+                                <label for="editExperiencePlace"><h2>Lugar</h2></label>
+                                <input type="text" id="editExperiencePlace" name="editExperiencePlace" [(ngModel)]="editExperiencePlace">
+                            </div>
+                            <div class="form-field">
+                                <label for="editExperienceDescription"><h2>Descripcion</h2></label>
+                                <input type="text" id="editExperienceDescription" name="editExperienceDescription" [(ngModel)]="editExperienceDescription">
+                            </div>
+                            <div class="form-field">
+                                <label for="editExperienceTimePeriod"><h2>Tiempo</h2></label>
+                                <input type="text" id="editExperienceTimePeriod" name="editExperienceTimePeriod" [(ngModel)]="editExperienceTimePeriod">
+                            </div>
+                            <div class="form-field">
+                                <input type="submit" class="btn btn-submit" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <button class="button btn" (click)="deleteExperience(item)">Delete</button>
             </div>
         </div>
         <h3 class="description">{{item.description}}</h3>
-        <h3 class="description">Tiempo: {{item.timePeriod}}</h3>
+        <h3 class="description" *ngIf="item.timePeriod">Tiempo: {{item.timePeriod}}</h3>
     </div>
+    <div *ngIf="experience">
+        <h3 class="no-exp" *ngIf="experience.length === 0">Sin experiencia por el momento</h3>
+    </div>
+    
 </div>

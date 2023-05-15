@@ -55,6 +55,55 @@
     color: var(--clr-slate600);
 }
 
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+
+.modal {
+    position: fixed;
+    padding: 1.5rem;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10;
+    background-color: var(--clr-dark);
+    display: flex;
+    width: 75%;
+    max-width: 400px;
+    height: 300px;
+    flex-direction: column;
+    color: var(--clr-slate200);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.education-form {
+    height: 12rem;
+}
+
+.experience-form {
+    height: 15rem;
+}
+
+.btn-submit {
+    margin-top: 1rem;
+    color: var(--clr-light);
+    margin-bottom: 1rem;
+    border: none
+}
+
+.no-exp {
+    color: var(--clr-slate400);
+    margin-top: 1rem
+}
+
 /* xs */
 @media (min-width: 475px) {
     

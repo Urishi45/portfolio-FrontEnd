@@ -1,7 +1,7 @@
 .header {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    flex-direction: row;
     padding-top: 1rem;
     padding-bottom: 2rem;
 }
@@ -9,10 +9,24 @@
 .header__menu {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     list-style: none;
     padding: 0;
     gap: 2em;
 }
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header__img {
+    width: 60%;
+}
+
 
 
 /* xs */
