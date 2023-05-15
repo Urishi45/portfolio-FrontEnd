@@ -4,6 +4,7 @@ import { Education } from 'src/app/education';
 import { ExperienceService } from 'src/app/services/experience.service';
 import { Experience } from 'src/app/experience';
 import { FormGroup, FormBuilder } from '@angular/forms'
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-education',
@@ -13,6 +14,8 @@ import { FormGroup, FormBuilder } from '@angular/forms'
 export class EducationComponent implements OnInit {
   education!: Education[]
   experience!: Experience[]
+  isLoggedIn: boolean = false;
+
   AddEducationFormState: boolean = false
   EditEducationFormState: boolean = false
   addExperienceFormState: boolean = false
@@ -37,13 +40,18 @@ export class EducationComponent implements OnInit {
   editExperienceTimePeriod!: string
   
 
-  constructor(private educationService: EducationService, private experienceService: ExperienceService) {
+  constructor(private educationService: EducationService, private experienceService: ExperienceService, private authService: AuthService) {
     
   }
 
   ngOnInit() {
     this.getEducation()
     this.getExperience()
+    this.getLogIn()
+  }
+
+  getLogIn() {
+    this.isLoggedIn = this.authService.isLoggedIn
   }
 
   getEducation() {

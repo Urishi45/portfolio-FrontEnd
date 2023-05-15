@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'  
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/user';
 @Component({
@@ -11,7 +12,7 @@ import { User } from 'src/app/user';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService){
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router){
     this.loginForm = this.formBuilder.group({
       email:['', [Validators.required, Validators.email]],
       password:['', [Validators.required, Validators.minLength(8)]]
@@ -33,8 +34,9 @@ export class LoginComponent {
     } else {
       this.loginForm.markAllAsTouched()
     }
+  }
 
-    console.log(this.getEmail()?.value)
-    console.log(this.getPassword()?.value)
+  continue() {
+    this.router.navigate(['/portfolio'])
   }
 }

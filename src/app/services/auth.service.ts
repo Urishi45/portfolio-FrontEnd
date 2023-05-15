@@ -7,7 +7,7 @@ import { Router } from '@angular/router'
   providedIn: 'root'
 })
 export class AuthService {
-
+  isLoggedIn: boolean = false;
   constructor(private authFire: AngularFireAuth, private router: Router) { }
 
   async login(user: User) {
@@ -17,8 +17,9 @@ export class AuthService {
     try {
 
       return await this.authFire.signInWithEmailAndPassword(email, password).then(result=>{
+        this.isLoggedIn = true
         this.router.navigate(['/portfolio'])
-        console.log('Logueado correctamente',result)
+        
 
       });
 
@@ -33,6 +34,11 @@ export class AuthService {
   }
 
   logOut() {
+    this.isLoggedIn = false
     return this.authFire.signOut()
+  }
+
+  isUserLoggedIn() {
+    return this.isLoggedIn
   }
 }

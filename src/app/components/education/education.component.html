@@ -3,8 +3,8 @@
         <div class="text-cont">
             <h2 class="title">Educacion</h2>
         </div>
-        <div class="button-cont">
-            <button class="button btn" (click)="toggleEducationForm()">Add</button>
+        <div class="button-cont" *ngIf="isLoggedIn">
+            <button class="button btn" (click)="toggleEducationForm()">Agregar</button>
         </div>
         <div class="overlay" *ngIf="AddEducationFormState">
             <div class="modal education-form">
@@ -29,7 +29,7 @@
             <h2 class="type">
                 {{item.type}}
             </h2>
-            <div class="button-cont">
+            <div class="button-cont" *ngIf="isLoggedIn">
                 <button class="button btn" (click)="toggleEditEducationForm(item)">Editar</button>
                 <div class="overlay" *ngIf="EditEducationFormState">
                     <div class="modal education-form">
@@ -48,7 +48,7 @@
                         </form>
                     </div>
                 </div>
-                <button class="button btn" (click)="deleteEducation(item)">Delete</button>
+                <button class="button btn" *ngIf="isLoggedIn" (click)="deleteEducation(item)">Borrar</button>
             </div>
         </div>
         <h3 class="description">{{item.description}}</h3>
@@ -60,7 +60,7 @@
             <h2 class="title">Experiencia</h2>
         </div>
         <div class="button-cont">
-            <button class="button btn" (click)="toggleAddExperience()">Add</button>
+            <button class="button btn" (click)="toggleAddExperience()" *ngIf="isLoggedIn">Agregar</button>
         </div>
         <div class="overlay" *ngIf="addExperienceFormState">
             <div class="modal experience-form">
@@ -90,7 +90,7 @@
                 {{item.place}}
             </h2>
             <div class="button-cont">
-                <button class="button btn" (click)="toggleEditExperienceForm(item)">Edit</button>
+                <button class="button btn" (click)="toggleEditExperienceForm(item)" *ngIf="isLoggedIn">Edit</button>
                 <div class="overlay" *ngIf="editExperienceFormState">
                     <div class="modal experience-form">
                         <form (ngSubmit)="onEditExperience()">
@@ -112,7 +112,7 @@
                         </form>
                     </div>
                 </div>
-                <button class="button btn" (click)="deleteExperience(item)">Delete</button>
+                <button class="button btn" (click)="deleteExperience(item)" *ngIf="isLoggedIn">Borrar</button>
             </div>
         </div>
         <h3 class="description">{{item.description}}</h3>
